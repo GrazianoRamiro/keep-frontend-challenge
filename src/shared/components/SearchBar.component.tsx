@@ -38,7 +38,7 @@ export function SearchBar<T>({
     <div className={styles.wrapper}>
       <label htmlFor={`search-${entity}`}>{title}</label>
 
-      <ul className={styles.searchWrapper}>
+      <ul className={styles.searchInputWrapper}>
         {selectedItems.map((selectedItem) => (
           <li key={selectedItem[itemKey] as React.Key} className={styles.selectedItems}>
             <span>{renderSelected(selectedItem)}</span>
@@ -48,18 +48,20 @@ export function SearchBar<T>({
                 const newSelectedItems = selectedItems.filter((item) => item[itemKey] !== selectedItem[itemKey])
                 setSelectedItems(newSelectedItems)
               }}
+              className={styles.selectedItemsButton}
             >
               x
             </button>
           </li>
         ))}
 
-        <li>
+        <li className={styles.searchInputItem}>
           <input
             id={`search-${entity}`}
             name="search"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
+            className={styles.searchInput}
           />
         </li>
       </ul>
@@ -76,6 +78,7 @@ export function SearchBar<T>({
                     setSelectedItems(selectedItems)
                     setSearchValue("")
                   }}
+                  className={styles.searchItemsButton}
                 >
                   {renderItem(item)}
                 </button>

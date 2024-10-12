@@ -1,4 +1,4 @@
-.searchWrapper {
+.searchInputWrapper {
     display: flex;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
@@ -9,11 +9,11 @@
     gap: 10px;
     align-items: center;
 
-    li:last-child {
+    .searchInputItem {
         flex-grow: 1;
     }
 
-    input {
+    .searchInput {
         border: none;
         width: 100%;
 
@@ -21,32 +21,33 @@
             outline: none;
         }
     }
-}
 
-.selectedItems {
-    background-color: #D9D9D9;
-    padding: 5px 5px 5px 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    font-size: 0.8em;
+    .selectedItems {
+        background-color: #D9D9D9;
+        padding: 5px 5px 5px 10px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.8em;
 
-    button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #868686;
+        .selectedItemsButton {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #868686;
+        }
     }
 }
+
 
 .searchItems {
     list-style-type: none;
     background-color: #f2f2f2;
     border-bottom: 1px solid #e1e1e1;
 
-    button {
+    .searchItemsButton {
         padding: 20px;
         background-color: transparent;
         border: none;
