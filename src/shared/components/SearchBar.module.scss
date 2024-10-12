@@ -9,14 +9,8 @@
     gap: 10px;
     align-items: center;
 
-
-    li {
-        list-style-type: none;
-    }
-
     li:last-child {
         flex-grow: 1;
-
     }
 
     input {
