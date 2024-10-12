@@ -2,18 +2,31 @@ class HttpService {
   async get<T>(url: string): Promise<T> {
     const response = await fetch(url)
 
-    if (!response.ok) {
-      throw new Error(`Error Get Request: ${response.statusText}`)
-    }
-
-    return response.json() as Promise<T>
+    return this.handleResponse<T>(response)
   }
 
-  async post<T>(url: string): Promise<T> {
-    const response = await fetch(url, { method: "POST" })
+  async post<T>(url: string, data: T): Promise<T> {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
 
+    return this.handleResponse<T>(response)
+  }
+
+  async handleResponse<T>(response: Response): Promise<T> {
     if (!response.ok) {
-      throw new Error(`Error Get Request: ${response.statusText}`)
+      const error = await response.json()
+      const errorInstance = new Error(
+        `[HTTP error] Status: ${response.status}, Message: ${error.message || "Unknown error"}`
+      )
+
+      // TODO: log error for monitoring
+
+      throw errorInstance
     }
 
     return response.json() as Promise<T>
