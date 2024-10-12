@@ -1,5 +1,5 @@
 import { ReactNode, useMemo, useState } from "react"
-import styles from "./search-bar.module.scss"
+import styles from "./SearchBar.module.scss"
 
 type SearchBarProps<T> = {
   items: T[]

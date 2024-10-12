@@ -1,5 +1,5 @@
 import { SearchBar } from "@/shared/components/SearchBar.component"
-import styles from "./users-list.module.scss"
+import styles from "./UsersList.module.scss"
 import { User } from "../types/user.types"
 import { useQuery } from "@tanstack/react-query"
 import { userService } from "../services/user.service"
