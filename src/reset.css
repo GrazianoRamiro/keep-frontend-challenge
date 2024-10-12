@@ -37,11 +37,6 @@ ul {
   padding: 0;
 }
 
-ol li,
-ul li {
-  list-style-type: inherit;
-}
-
 /*
  * Otherwise browsers will automatically set the font family to monospace, which
  * might not be a part of your brand’s style guide.
