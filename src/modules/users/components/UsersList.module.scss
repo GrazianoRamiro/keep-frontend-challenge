@@ -1,0 +1,27 @@
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    img {
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        background-color: #D9D9D9;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 2px;
+
+        span {
+            color: #353535;
+        }
+    }
+
+
+}
