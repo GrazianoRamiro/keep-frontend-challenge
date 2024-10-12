@@ -16,11 +16,11 @@ export function UsersList() {
 
   const renderItem = (user: User) => (
     <div className={styles.listItem}>
-      <img />
+      <img className={styles.listItemImage} />
 
-      <div>
-        <span>{user.name}</span>
-        <span>{user.email}</span>
+      <div className={styles.listItemContent}>
+        <span className={styles.listItemText}>{user.name}</span>
+        <span className={styles.listItemText}>{user.email}</span>
       </div>
     </div>
   )

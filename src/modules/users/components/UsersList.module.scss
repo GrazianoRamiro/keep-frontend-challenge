@@ -4,22 +4,22 @@
     justify-content: left;
     gap: 10px;
 
-    img {
+    .listItemImage {
         width: 48px;
         height: 48px;
         border-radius: 4px;
-        background-color: #D9D9D9;
+        background-color: var(--primary-color);
     }
 
-    div {
+    .listItemContent {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         gap: 2px;
 
-        span {
-            color: #353535;
+        .listItemText {
+            color: var(--text-color);
         }
     }
 
