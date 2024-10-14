@@ -1,58 +1,69 @@
-.searchInputWrapper {
-    display: flex;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
-    padding: 5px;
+.title {
+    display: inline-block;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+}
+
+.listsWrapper {
     width: 100%;
     max-width: 400px;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
 
-    .searchInputItem {
-        flex-grow: 1;
-    }
+    .searchInputWrapper {
+        display: flex;
+        border: 1px solid var(--primary-color);
+        border-radius: var(--border-radius);
+        padding: 5px;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        box-shadow: 0px 2px 4px 0px #0000000D;
 
-    .searchInput {
-        border: none;
-        width: 100%;
+        .searchInputItem {
+            flex-grow: 1;
+        }
 
-        &:focus {
-            outline: none;
+        .searchInput {
+            border: none;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .selectedItems {
+            background-color: var(--primary-color);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: var(--font-size-sm);
+
+            .selectedItemsButton {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: var(--secondary-color);
+                padding: 0;
+            }
         }
     }
 
-    .selectedItems {
-        background-color: var(--primary-color);
-        padding: var(--spacing-xs) var(--spacing-sm);
-        border-radius: var(--border-radius);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        font-size: 0.8em;
 
-        .selectedItemsButton {
+    .listItems {
+        list-style-type: none;
+        background-color: var(--background-color-light);
+        border-bottom: 1px solid var(--border-color-light);
+
+        .listItemsButton {
+            padding: 20px;
             background-color: transparent;
             border: none;
             cursor: pointer;
-            color: var(--secondary-color);
-            padding: 0;
+            width: 100%;
+            font-size: var(--font-size-sm);
         }
-    }
-}
-
-
-.searchItems {
-    list-style-type: none;
-    background-color: var(--background-color-light);
-    border-bottom: 1px solid var(--border-color-light);
-
-    .searchItemsButton {
-        padding: 20px;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        width: 100%;
     }
 }

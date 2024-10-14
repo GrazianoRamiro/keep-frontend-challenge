@@ -36,56 +36,58 @@ export function SearchBar<T>({
 
   return (
     <div className={styles.wrapper}>
-      <label htmlFor={`search-${entity}`}>{title}</label>
+      <label htmlFor={`search-${entity}`} className={styles.title}>{title}</label>
 
-      <ul className={styles.searchInputWrapper}>
-        {selectedItems.map((selectedItem) => (
-          <li key={selectedItem[itemKey] as React.Key} className={styles.selectedItems}>
-            <span>{renderSelected(selectedItem)}</span>
+      <div className={styles.listsWrapper}>
+        <ul className={styles.searchInputWrapper}>
+          {selectedItems.map((selectedItem) => (
+            <li key={selectedItem[itemKey] as React.Key} className={styles.selectedItems}>
+              <span>{renderSelected(selectedItem)}</span>
 
-            <button
-              onClick={() => {
-                const newSelectedItems = selectedItems.filter((item) => item[itemKey] !== selectedItem[itemKey])
-                setSelectedItems(newSelectedItems)
-              }}
-              className={styles.selectedItemsButton}
-            >
-              x
-            </button>
+              <button
+                onClick={() => {
+                  const newSelectedItems = selectedItems.filter((item) => item[itemKey] !== selectedItem[itemKey])
+                  setSelectedItems(newSelectedItems)
+                }}
+                className={styles.selectedItemsButton}
+              >
+                x
+              </button>
+            </li>
+          ))}
+
+          <li className={styles.searchInputItem}>
+            <input
+              id={`search-${entity}`}
+              name="search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              className={styles.searchInput}
+            />
           </li>
-        ))}
+        </ul>
 
-        <li className={styles.searchInputItem}>
-          <input
-            id={`search-${entity}`}
-            name="search"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            className={styles.searchInput}
-          />
-        </li>
-      </ul>
+        <ul>
+          {searchValue &&
+            filteredItems.map((item) => {
+              return (
+                <li key={item[itemKey] as React.Key} className={styles.listItems}>
+                  <button
+                    onClick={() => {
+                      selectedItems.push(item)
 
-      <ul>
-        {searchValue &&
-          filteredItems.map((item) => {
-            return (
-              <li key={item[itemKey] as React.Key} className={styles.searchItems}>
-                <button
-                  onClick={() => {
-                    selectedItems.push(item)
-
-                    setSelectedItems(selectedItems)
-                    setSearchValue("")
-                  }}
-                  className={styles.searchItemsButton}
-                >
-                  {renderItem(item)}
-                </button>
-              </li>
-            )
-          })}
-      </ul>
+                      setSelectedItems(selectedItems)
+                      setSearchValue("")
+                    }}
+                    className={styles.listItemsButton}
+                  >
+                    {renderItem(item)}
+                  </button>
+                </li>
+              )
+            })}
+        </ul>
+      </div>
     </div>
   )
 }
