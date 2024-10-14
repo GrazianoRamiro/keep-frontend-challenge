@@ -36,7 +36,9 @@ export function SearchBar<T>({
 
   return (
     <div className={styles.wrapper}>
-      <label htmlFor={`search-${entity}`} className={styles.title}>{title}</label>
+      <label htmlFor={`search-${entity}`} className={styles.title}>
+        {title}
+      </label>
 
       <div className={styles.listsWrapper}>
         <ul className={styles.searchInputWrapper}>
@@ -59,7 +61,9 @@ export function SearchBar<T>({
           <li className={styles.searchInputItem}>
             <input
               id={`search-${entity}`}
+              type="text"
               name="search"
+              autoComplete="off"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               className={styles.searchInput}
