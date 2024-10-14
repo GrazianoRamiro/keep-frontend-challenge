@@ -1,0 +1,15 @@
+.header {
+    padding: var(--spacing-md);
+}
+
+.mainContent {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-image: url(https://cdn.prod.website-files.com/664501a053251deac9fb7060/664501a053251deac9fb70e9_blurred-shapes.png), linear-gradient(#fff, #eee0 95%, #eee), linear-gradient(135deg, #faeaf554, #fff1dd), linear-gradient(225deg, #fff 60%, #e7e7e7);
+    background-repeat: no-repeat, repeat, repeat, repeat;
+    background-size: contain, auto, auto, auto;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
