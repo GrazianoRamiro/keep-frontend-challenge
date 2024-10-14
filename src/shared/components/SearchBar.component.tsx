@@ -21,7 +21,7 @@ export function SearchBar<T>({
   renderItem,
 }: SearchBarProps<T>) {
   const [selectedItems, setSelectedItems] = useState<T[]>([])
-  const [searchValue, setSearchValue] = useState("")
+  const [searchValue, setSearchValue] = useState("") // TODO: implement debounced state
 
   const filteredItems = useMemo(
     () =>
