@@ -1,12 +1,12 @@
-.title {
-    display: inline-block;
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-sm);
-}
-
-.listsWrapper {
+.wrapper {
     width: 100%;
     max-width: 400px;
+
+    .title {
+        display: inline-block;
+        margin-bottom: var(--spacing-xs);
+        font-size: var(--font-size-sm);
+    }
 
     .searchInputWrapper {
         display: flex;
