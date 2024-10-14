@@ -55,6 +55,11 @@
     .listItems {
         list-style-type: none;
         background-color: var(--background-color-light);
+        transition: background-color 0.3s ease;
+
+        &:hover:not(:has(.noResultsItem)) {
+            background-color: var(--primary-color);
+        }
 
         &:not(:last-child) {
             border-bottom: 1px solid var(--border-color-light);
