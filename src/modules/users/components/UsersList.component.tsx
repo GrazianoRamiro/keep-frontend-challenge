@@ -34,7 +34,7 @@ export function UsersList() {
       items={users}
       entity="user"
       itemKey="id"
-      title="Search users:"
+      title="Select users:"
       searchEval={searchEval}
       renderItem={renderItem}
       renderSelected={renderSelected}
