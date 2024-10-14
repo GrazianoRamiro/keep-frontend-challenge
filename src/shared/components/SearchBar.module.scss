@@ -55,15 +55,28 @@
     .listItems {
         list-style-type: none;
         background-color: var(--background-color-light);
-        border-bottom: 1px solid var(--border-color-light);
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--border-color-light);
+        }
+
+        .listItemsButton,
+        .noResultsItem {
+            padding: 20px;
+            font-size: var(--font-size-sm);
+            width: 100%;
+        }
 
         .listItemsButton {
-            padding: 20px;
             background-color: transparent;
             border: none;
             cursor: pointer;
-            width: 100%;
-            font-size: var(--font-size-sm);
+        }
+
+        .noResultsItem {
+            display: inline-block;
+            text-align: center;
+            color: var(--text-color-light);
         }
     }
 }

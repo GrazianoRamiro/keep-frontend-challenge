@@ -34,6 +34,8 @@ export function SearchBar<T>({
     [items, selectedItems, searchEval, searchValue, itemKey]
   )
 
+  const noItems = searchValue !== "" && filteredItems.length == 0
+
   return (
     <div className={styles.wrapper}>
       <label htmlFor={`search-${entity}`} className={styles.title}>
@@ -90,6 +92,12 @@ export function SearchBar<T>({
                 </li>
               )
             })}
+
+          {noItems && (
+            <li className={styles.listItems}>
+              <span className={styles.noResultsItem}>We're sorry, we couldn't find any results.</span>
+            </li>
+          )}
         </ul>
       </div>
     </div>
