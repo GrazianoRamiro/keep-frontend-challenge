@@ -1,14 +1,10 @@
 import { SearchBar } from "@/shared/components/SearchBar.component"
 import styles from "./UsersList.module.scss"
 import { User } from "../types/user.types"
-import { useQuery } from "@tanstack/react-query"
-import { userService } from "../services/user.service"
+import { useFetchUsers } from "../hooks/useFetchUsers.hook"
 
 export function UsersList() {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["fetchUserList"],
-    queryFn: () => userService.fetchUsersList(),
-  })
+  const { users, isLoadingUsers, isErrorUsers } = useFetchUsers()
 
   const searchEval = (user: User, searchValue: string) => user.name.toLowerCase().includes(searchValue.toLowerCase())
 
@@ -25,17 +21,17 @@ export function UsersList() {
     </div>
   )
 
-  if (isLoading) {
+  if (isLoadingUsers) {
     return <p>Loading...</p>
   }
 
-  if (isError) {
+  if (isErrorUsers) {
     return <p>Error...</p>
   }
 
   return (
     <SearchBar
-      items={data as User[]}
+      items={users}
       entity="user"
       itemKey="id"
       title="Search users:"
