@@ -9,6 +9,7 @@ This is a Single Page Application built with **React**, **Typescript**, **SCSS**
 The folder structure is a **feature-based** approach to represent a clear separation of concerns and keep feature-related entities together, making it easier to understand and maintain.
 
 - **Design System**: Contains the base styles, variables (CSS variables), and primitive components (e.g. buttons, headings) that serve as the foundation of the UI. These components are typically stateless or manage internal state, and they aim to provide consistency and reusability across the application.
+Currently, the design system contains only base styles and CSS variables (e.g., for colors, spacing, and typography). No components have been added yet, but the system is set up to ensure consistency and scalability across the application as more reusable components are introduced in the future.
 
 - **Modules**: Contains the different features of the application. Each folder represents a feature with its own components, hooks, services, and types. This approach groups everything relevant to a specific feature in one place.
 
