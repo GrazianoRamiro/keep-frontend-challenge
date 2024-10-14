@@ -20,16 +20,19 @@ The folder structure is a **feature-based** approach to represent a clear separa
 Since the exercise started as a Single Page App (SPA) and also considering it is a POC, it was chosen to continue using client-side rendering with `React`. For larger applications, frameworks like Next.js or Remix (which support SSR) could be considered to improve server-side performance and SEO capabilities.
 
 **2. Git Flow**
-Given that this is a solo project and a POC, a simple `main` branch was used. A more complex Git flow, such as *feature-based* branching or *trunk-based* development, would be better suited for larger teams or long-term projects but was unnecessary here.
+Given that this is a solo project and a POC, a simple `main` branch was used. A more complex Git flow, such as _feature-based_ branching or _trunk-based_ development, would be better suited for larger teams or long-term projects but was unnecessary here.
 
 **3. Structure**
-The `feature-based` structure was chosen to ensure a clear separation of concerns and to group related logic together. This makes it easier for developers to work on individual features without worrying about cross-module dependencies. Another option would have been a *layered* structure, where files are grouped by type (e.g., components, hooks), but that approach often makes it harder to navigate across features.
+The `feature-based` structure was chosen to ensure a clear separation of concerns and to group related logic together. This makes it easier for developers to work on individual features without worrying about cross-module dependencies. Another option would have been a _layered_ structure, where files are grouped by type (e.g., components, hooks), but that approach often makes it harder to navigate across features.
 
 **4. Styling**
 `SCSS` was selected due to its familiarity and its out of the box support by Vite. Different CSS-in-JS libraries like Styled Components or Emotion, require some setup and have their own syntax, so I chose SCSS in favor of simplicity. For larger projects or where dynamic styling is a requirement, the extra flexibility provided by CSS-in-JS libraries would be a better choice.
 
 **5. API Fetching**
-Although the requirements didn't ask for any state management library (actually it's requested to not use any external library), I included `React Query` to manage server state. It provides a clean approach to handle API fetching and its different states within a React component. For global client state, React `Context` could have been used, but in this case, React Query adds value by providing a declarative way to fetch and manage data. Additionally, for local component state, React's `useState` was used, as it's sufficient for small, internal state management.
+While the application only makes a single API call, `React Query` was selected to handle API fetching and server state management. It provides a cleaner, more efficient way to handle different data states (e.g., loading, error, success), and internally it is used `fetch` to make the API request.
+
+**6. State Management**
+This is a simple application without complex state requirements, so there was no need for global state management. Although React `Context` could have been used for managing global state, it wasn't necessary in this case. For local component state, React's `useState` was sufficient to handle the small, internal state needed.
 
 ## Future Considerations
 
